@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/joi-browser@13.4.0/dist/joi-browser.min.js"></script>
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Sign up form</h1>
+      <form id="signUpForm">
+        <div class="mb-3 oneline">
+          <label for="accountType" class="form-label">Account type</label>
+          <select id="accountType" class="form-select">
+            <option selected>Select account type</option>
+            <option value="patient">Patient</option>
+            <option value="doctor">Doctor</option>
+          </select>
+        </div>
+
+        <div class="mb-3 oneline">
+          <label for="lastName" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="firstName" />
+          <div id="firstNameHelp" class="form-text hidden"></div>
+        </div>
+        <div class="mb-3 oneline">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lastName" />
+          <div id="lastNameHelp" class="form-text hidden"></div>
+        </div>
+
+        <div class="mb-3 oneline">
+          <label for="profilePicture" class="form-label">Profile Picture</label>
+          <input
+            id="profilePicture"
+            class="form-control"
+            type="file"
+            accept="image/png, image/jpeg"
+          />
+          <div id="profilePictureHelp" class="form-text hidden"></div>
+        </div>
+
+        <div class="mb-3 oneline">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" />
+          <div id="usernameHelp" class="form-text hidden"></div>
+        </div>
+        <div class="mb-3 oneline">
+          <label for="emailAddress" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="emailAddress" />
+          <div id="emailAddressHelp" class="form-text hidden"></div>
+        </div>
+
+        <div class="mb-3 oneline">
+          <label for="password1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password1" />
+          <div id="password1Help" class="form-text hidden"></div>
+        </div>
+        <div class="mb-3 oneline">
+          <label for="password2" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="password2" />
+          <div id="password2Help" class="form-text hidden"></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="line1" class="form-label">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="line1"
+            placeholder="Line 1"
+          />
+          <div class="addressInputs">
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              placeholder="City"
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="state"
+              placeholder="State"
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="pincode"
+              placeholder="Pincode"
+            />
+          </div>
+          <div id="addressLine1Help" class="form-text hidden"></div>
+          <div id="addressCityHelp" class="form-text hidden"></div>
+          <div id="addressStateHelp" class="form-text hidden"></div>
+          <div id="addressPinCodeHelp" class="form-text hidden"></div>
+        </div>
+
+        <button id="submitForm" type="submit" class="btn btn-primary">
+          SignUp
+        </button>
+      </form>
+    </main>
+    <script type="module" src="{% static 'core/js/signUpPage.js' %}"></script>
+  </body>
+</html>

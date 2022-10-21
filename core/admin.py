@@ -24,15 +24,13 @@ class UserAdmin(BaseUserAdmin):
         }),
     )
 
-@admin.register(models.Patient)
-class PatientAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name']
-    list_select_related = ['user']
-    ordering = ['user__first_name', 'user__last_name']
+@admin.register(models.Profile)
+class Profile(admin.ModelAdmin):
+    list_display = ['name']
 
-@admin.register(models.Doctor)
-class DoctorAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name']
-    list_select_related = ['user']
-    ordering = ['user__first_name', 'user__last_name']
+@admin.register(models.UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ['profile_name', 'first_name', 'last_name']
+    list_select_related = ['user', 'profile']
+    ordering = ['profile__name', 'user__first_name', 'user__last_name']
 
