@@ -3,6 +3,6 @@
 db.sqlite3
 jsconfig.json
 
-.vscode/
-media/
-static/
+/.vscode
+/media
+/static
