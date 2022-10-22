@@ -26,7 +26,7 @@ SECRET_KEY = 'll@rrh1@%evim04w&1xrs6if@5z^qg%jn5!(hbz_kvj-pgi$cj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.loca.lt']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','.loca.lt']
 
 
 # Application definition
